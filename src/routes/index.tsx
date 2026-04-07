@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+// @ts-ignore
 import WelcomeHero from "@/components/WelcomeHero";
 
 export const Route = createFileRoute("/")({
