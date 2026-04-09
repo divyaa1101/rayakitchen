@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
+import { Link } from "@tanstack/react-router";
 import food1 from "@/assets/food-1.jpg";
 import food2 from "@/assets/food-2.jpg";
 import food3 from "@/assets/food-3.jpg";
 import food4 from "@/assets/food-4.jpg";
+
 
 const images = [food1, food2, food3, food4];
 
@@ -17,7 +19,7 @@ export default function WelcomeHero() {
   }, []);
 
   return (
-    <div className="relative flex min-h-screen items-center justify-center overflow-hidden">
+    <div className="dark relative flex min-h-screen items-center justify-center overflow-hidden">
       {/* Slideshow background */}
       {images.map((src, i) => (
         <img
@@ -36,7 +38,7 @@ export default function WelcomeHero() {
       ))}
 
       {/* Dark overlay */}
-      <div className="absolute inset-0 bg-background/70" />
+      <div className="absolute inset-0 bg-black/50" />
 
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center gap-6 px-4 text-center">
@@ -65,6 +67,13 @@ export default function WelcomeHero() {
         >
           Where every dish tells a story
         </p>
+
+        <Link
+          to="/home"
+          className="inline-flex items-center justify-center rounded-md bg-primary px-6 py-3 text-lg font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+        >
+          Order now
+        </Link>
 
         {/* Decorative line */}
         <div className="h-px w-24 bg-primary" />
